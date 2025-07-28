@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nosotros 💕</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #ff69b4;
+      transition: all 0.5s ease;
+    }
+
+    .frase {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      color: #ffb6c1;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+  <h1>Nuestros Momentos 💖</h1>
+  <img id="foto" src="foto0.jpg" alt="Foto bonita">
+  <div class="frase" id="frase"> 💗 </div>
+  <br>
+  <button onclick="siguienteFoto()">Siguiente 💫</button>
+
+  <script>
+    const fotos = [
+      { img: "foto1.jpg", frase: "Desde aquí empezó todo... y elegiria empezar una y mil veces💗" },
+      { img: "foto2.jpeg", frase: "Tienes unos ojos que no me cansare de ver.." },
+      { img: "foto3.jpeg", frase: "Tus besos son mi dopamina 🫶🏼" },
+      { img: "foto4.jpeg", frase: "Los momentos son mejor cuando estoy contigo 😿" } ,
+      { img: "foto5.jpeg", frase: "Ni todas las galaxias juntas se comparan con el amor que te tengo🥰" } ,
+      { img: "foto6.jpg", frase: "Tu sonrisa es incoparable por lo bella que es..." } ,
+      { img: "foto7.jpg", frase: "Somos mejor juntos que separados...😭💗" }
+    ];
+
+    let index = 0;
+
+    function siguienteFoto() {
+      index = (index + 1) % fotos.length;
+      document.getElementById("foto").src = fotos[index].img;
+      document.getElementById("frase").textContent = fotos[index].frase;
+    }
+  </script>
+</body>
+</html>
